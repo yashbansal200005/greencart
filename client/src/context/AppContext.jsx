@@ -145,8 +145,27 @@ const getCartAmount = () =>{
         }
     },[cartItems])
 
-    const value = {navigate, user, setUser, setIsSeller, isSeller,
-        showUserLogin, setShowUserLogin, products, currency, addToCart, updateCartItem, removeFromCart, cartItems, searchQuery, setSearchQuery, getCartAmount, getCartCount, axios, fetchProducts, setCartItems
+    const value = {
+    navigate,
+    user,
+    setUser,
+    setIsSeller,
+    isSeller,
+    showUserLogin,
+    setShowUserLogin,
+    products,
+    currency,
+    addToCart,
+    updateCartItem,
+    removeFromCart,
+    cartItems,
+    searchQuery,
+    setSearchQuery,
+    getCartAmount,
+    getCartCount,
+    axios,
+    fetchProducts,
+    setCartItems
     }
 
     return <AppContext.Provider value={value}>
