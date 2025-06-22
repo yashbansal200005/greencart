@@ -24,3 +24,5 @@ Stripe Payment Gateway
 
 🙏 Acknowledgements
 This project was built by following the YouTube channel Greatstack. 
+
+Deploy link-https://greencart-f7f7.vercel.app/
