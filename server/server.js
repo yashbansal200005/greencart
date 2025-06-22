@@ -21,7 +21,6 @@ await connectCloudinary();
 
 // ✅ Allowed frontend origins
 //const allowedOrigins = ['https://greencart-f7f7.vercel.app'];
-import cors from 'cors';
 
 const allowedOrigins = [
   'https://greencart-f7f7.vercel.app',
