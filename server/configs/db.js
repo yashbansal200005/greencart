@@ -7,7 +7,7 @@ const connectDB = async () => {
     );
 
     const uri = process.env.MONGODB_URI?.replace(/\/$/, ''); // Remove trailing slash
-    await mongoose.connect(`${uri}/ecom`);
+    await mongoose.connect(`${uri}/test`);
   } catch (error) {
     console.error("MongoDB connection error:", error.message);
   }
