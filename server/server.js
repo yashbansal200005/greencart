@@ -21,15 +21,24 @@ await connectCloudinary();
 
 // ✅ Allowed frontend origins
 //const allowedOrigins = ['https://greencart-f7f7.vercel.app'];
+import cors from 'cors';
+
 const allowedOrigins = [
-  'https://greencart-f7f7.vercel.app', // main deployed frontend
-  'https://greencart-f7f7-bmp1zchrx-yashbansal200005-gmailcoms-projects.vercel.app', // preview deploys
+  'https://greencart-f7f7.vercel.app',
+  'https://greencart-f7f7-bmp1zchrx-yashbansal200005-gmailcoms-projects.vercel.app'
 ];
-// ✅ Enable CORS (before all routes)
+
 app.use(cors({
-  origin: allowedOrigins,
-  credentials: true,
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true
 }));
+
 
 // ✅ Explicitly handle OPTIONS preflight requests
 app.options('*', cors({
