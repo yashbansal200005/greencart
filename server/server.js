@@ -15,28 +15,44 @@ import { stripeWebhooks } from './controllers/orderController.js';
 const app = express();
 const port = process.env.PORT || 4000;
 
-await connectDB()
-await connectCloudinary()
+// Connect to DB and Cloudinary
+await connectDB();
+await connectCloudinary();
 
-// Allow multiple origins
-const allowedOrigins = ['https://greencart-f7f7.vercel.app']
+// ✅ Allowed frontend origins
+const allowedOrigins = ['https://greencart-f7f7.vercel.app'];
 
-app.post('/stripe', express.raw({type: 'application/json'}), stripeWebhooks)
+// ✅ Enable CORS (before all routes)
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true,
+}));
 
-// Middleware configuration
+// ✅ Explicitly handle OPTIONS preflight requests
+app.options('*', cors({
+  origin: allowedOrigins,
+  credentials: true,
+}));
+
+// ✅ Stripe webhook route must come before express.json()
+app.post('/stripe', express.raw({ type: 'application/json' }), stripeWebhooks);
+
+// ✅ General middlewares (after Stripe)
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({origin: allowedOrigins, credentials: true}));
 
-
+// ✅ Basic route
 app.get('/', (req, res) => res.send("API is Working"));
-app.use('/api/user', userRouter)
-app.use('/api/seller', sellerRouter)
-app.use('/api/product', productRouter)
-app.use('/api/cart', cartRouter)
-app.use('/api/address', addressRouter)
-app.use('/api/order', orderRouter)
 
-app.listen(port, ()=>{
-    console.log(`Server is running on http://localhost:${port}`)
-})
+// ✅ App routes
+app.use('/api/user', userRouter);
+app.use('/api/seller', sellerRouter);
+app.use('/api/product', productRouter);
+app.use('/api/cart', cartRouter);
+app.use('/api/address', addressRouter);
+app.use('/api/order', orderRouter);
+
+// ✅ Start server
+app.listen(port, () => {
+  console.log(`✅ Server running on http://localhost:${port}`);
+});
