@@ -17,6 +17,8 @@ const Login = () => {
 
             const {data} = await axios.post(`/api/user/${state}`,{
                 name, email, password
+            },{
+               withCredentials: true  // ⬅️ Important for cookies
             });
             if (data.success){
                 navigate('/')
