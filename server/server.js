@@ -20,8 +20,11 @@ await connectDB();
 await connectCloudinary();
 
 // ✅ Allowed frontend origins
-const allowedOrigins = ['https://greencart-f7f7.vercel.app'];
-
+//const allowedOrigins = ['https://greencart-f7f7.vercel.app'];
+const allowedOrigins = [
+  'https://greencart-f7f7.vercel.app', // main deployed frontend
+  'https://greencart-f7f7-bmp1zchrx-yashbansal200005-gmailcoms-projects.vercel.app', // preview deploys
+];
 // ✅ Enable CORS (before all routes)
 app.use(cors({
   origin: allowedOrigins,
