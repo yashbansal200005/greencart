@@ -1,28 +1,38 @@
-🛒 GreenCart - Grocery Delivery Website (MERN Stack)
-This is a full-stack grocery delivery website built using the MERN stack (MongoDB, Express, React, Node.js) by following the tutorial: https://www.youtube.com/watch?v=PaQX0pktLnw 
+# 🛒 GreenCart - Grocery Delivery Website (MERN Stack)
 
-📌 Features
-🛍️ View and order groceries from a user-friendly interface
-🧑 Admin panel to upload new grocery products
-💳 Online payments integration using Stripe
-📦 Real-time order placement and tracking
-🎨 Styled with Tailwind CSS and responsive UI components
+GreenCart is a full-stack grocery delivery web application built using the **MERN stack** (MongoDB, Express.js, React, Node.js). It allows users to browse groceries, place orders, and track them in real time, with a secure Stripe-based payment system.
 
-🛠️ Tech Stack
-Frontend:
-React JS
-Tailwind CSS
-Axios
+🔗 **Live Demo:** [https://greencart-f7f7.vercel.app/](https://greencart-f7f7.vercel.app/)
 
-Backend:
-Node.js
-Express.js
-MongoDB (Mongoose)
+---
 
-Others:
-Stripe Payment Gateway
+## 📌 Features
 
-🙏 Acknowledgements
-This project was built by following the YouTube channel Greatstack. 
+- 🛍️ View and order groceries through an intuitive interface  
+- 🧑‍💼 Admin panel to manage and upload products  
+- 💳 Online payments via Stripe  
+- 📦 Real-time order placement and tracking  
+- 🎨 Responsive design using Tailwind CSS  
 
-Deploy link-https://greencart-f7f7.vercel.app/
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+- React.js  
+- Tailwind CSS  
+- Axios  
+
+### Backend
+- Node.js  
+- Express.js  
+- MongoDB (Mongoose)  
+
+### Others
+- Stripe Payment Gateway  
+
+---
+
+## 🙏 Acknowledgements
+
+This project was built by following the tutorial by **GreatStack** on [YouTube](https://www.youtube.com/watch?v=PaQX0pktLnw).
